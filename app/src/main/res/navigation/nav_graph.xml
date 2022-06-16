@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/orderFragment">
+
+    <action
+        android:id="@+id/action_dish_details"
+        app:destination="@id/dishBottomSheetDialogFragment" />
+
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.lydone.restaurantclientapp.presentation.order.OrderFragment"
+        android:label="@string/current_order"
+        tools:layout="@layout/fragment_order">
+        <deepLink app:uri="myapp://lydone/main?table={id}" />
+        <action
+            android:id="@+id/action_add_dishes"
+            app:destination="@id/addDishesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/dishBottomSheetDialogFragment"
+        android:name="com.lydone.restaurantclientapp.presentation.common.DishBottomSheetDialogFragment"
+        android:label="DishBottomSheetDialogFragment"
+        tools:layout="@layout/bottom_sheet_dialog_fragment_dish">
+        <argument
+            android:name="dish"
+            app:argType="com.lydone.restaurantclientapp.domain.common.Dish" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/addDishesFragment"
+        android:name="com.lydone.restaurantclientapp.presentation.adddishes.AddDishesFragment"
+        android:label="@string/choose_dishes"
+        tools:layout="@layout/fragment_add_dishes">
+        <action
+            android:id="@+id/action_confirmation"
+            app:destination="@id/confirmationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.lydone.restaurantclientapp.presentation.confirmation.ConfirmationFragment"
+        android:label="@string/confirm_choice">
+
+        <argument
+            android:name="cart"
+            app:argType="java.util.HashMap" />
+    </fragment>
+</navigation>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RestaurantClientApp</string>
+    <string name="empty_order">Вы пока ничего не заказали</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="call_waiter">Позвать официанта</string>
+    <string name="add_dishes">Добавить блюда</string>
+    <string name="current_order">Текущий заказ</string>
+    <string name="total_price_placeholder">Итого: %1$d ₽</string>
+    <string name="price_placeholder">%1$d ₽</string>
+    <string name="quantity_price_placeholder">%1$d x %2$d ₽</string>
+    <string name="add">Добавить</string>
+    <string name="choose_dishes">Выберите блюда</string>
+    <string name="to_confirmation_placeholder">К подтверждению (%d ₽)</string>
+    <string name="confirm_choice">Подтвердите выбор</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="waiter_has_been_called">Вызов отправлен</string>
+    <string name="dish_description_placeholder">%s\n\n%d гр.</string>
+</resources>
